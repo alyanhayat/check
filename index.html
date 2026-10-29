@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Washa 💗</title>
+    <style>
+        /* ---------- Basic Setup ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Georgia, "Times New Roman", serif;
+            background: linear-gradient(135deg,
+                    #fff0f5,
+                    #ffe4ec,
+                    #fce7f3,
+                    #fff7f0);
+            color: #70465b;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* ---------- Main Card ---------- */
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            padding: 50px 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid #f3c8d9;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(173, 105, 137, 0.15);
+            animation: fadeIn 1.2s ease;
+        }
+
+        /* ---------- Envelope ---------- */
+        .envelope {
+            font-size: 75px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .small-text {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #bd7897;
+            margin-bottom: 18px;
+        }
+
+        /* ---------- Heading ---------- */
+        h1 {
+            font-size: clamp(27px, 5vw, 38px);
+            line-height: 1.4;
+            font-weight: normal;
+            margin-bottom: 18px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #987489;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        /* ---------- Buttons ---------- */
+        button {
+            border: none;
+            padding: 15px 28px;
+            border-radius: 50px;
+            background: #e8a2bd;
+            color: white;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(205, 126, 159, 0.25);
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #d783a5;
+            transform: translateY(-3px);
+        }
+
+        /* ---------- Prank Popup ---------- */
+        .popup {
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: rgba(76, 43, 60, 0.45);
+            backdrop-filter: blur(7px);
+        }
+
+        .popup-content {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 25px;
+            text-align: center;
+            background: #fff5f8;
+            border: 2px solid #f0bfd2;
+            border-radius: 28px;
+            box-shadow: 0 15px 50px rgba(90, 42, 65, 0.2);
+            animation: popIn 0.5s ease;
+        }
+
+        .ring {
+            display: block;
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .popup-content h2 {
+            font-size: 28px;
+            color: #c05d86;
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        /* ---------- Hidden Elements ---------- */
+        .hidden {
+            display: none;
+        }
+
+        /* ---------- Animations ---------- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ---------- Mobile ---------- */
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 22px;
+            }
+
+            .small-text {
+                letter-spacing: 2px;
+            }
+
+            .popup-content h2 {
+                font-size: 24px;
+            }
+
+            button {
+                max-width: 100%;
+            }
+        }
+
+
+        /* ---------- Birthday Reveal ---------- */
+        .birthday-reveal {
+            width: 100%;
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 35px 25px;
+            text-align: center;
+            background: linear-gradient(145deg, #fff8fb, #ffeaf2);
+            border: 1px solid #f1c4d6;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(173, 105, 137, 0.15);
+            animation: popIn 0.8s ease;
+        }
+
+        .birthday-decor {
+            font-size: 25px;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+        }
+
+        .birthday-cake {
+            font-size: 90px;
+            margin: 20px 0;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .birthday-reveal h1 {
+            color: #c05d86;
+            font-size: clamp(28px, 6vw, 42px);
+            margin-bottom: 12px;
+        }
+
+        .birthday-subtitle {
+            color: #987489;
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .birthday-message {
+            padding: 25px 20px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid #f6d4e1;
+            border-radius: 22px;
+            line-height: 1.9;
+            font-size: 16px;
+        }
+
+        .birthday-message p {
+            margin-bottom: 18px;
+        }
+
+        .birthday-message p:first-child {
+            color: #c05d86;
+            font-weight: bold;
+            font-size: 21px;
+        }
+
+        .birthday-signature {
+            color: #bd7897;
+            font-style: italic;
+        }
+
+        .birthday-hearts {
+            font-size: 27px;
+            margin-top: 25px;
+            animation: float 2.5s ease-in-out infinite;
+        }
+
+
+        /* ---------- Birthday Magic ---------- */
+
+        .birthday-reveal {
+            position: relative;
+            overflow: hidden;
+            animation: birthdayAppear 1s ease both;
+        }
+
+        .birthday-decor {
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .birthday-cake {
+            filter: drop-shadow(0 8px 15px rgba(220, 130, 170, 0.25));
+        }
+
+        .birthday-message {
+            box-shadow: 0 8px 25px rgba(210, 140, 170, 0.08);
+        }
+
+        .birthday-hearts {
+            letter-spacing: 8px;
+            animation: heartBeat 1.8s ease-in-out infinite;
+        }
+
+        @keyframes birthdayAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes heartBeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+
+        /* ---------- Birthday Music Button ---------- */
+        .music-button {
+            margin-top: 25px;
+            background: linear-gradient(135deg, #e8a2bd, #cf83a3);
+            letter-spacing: 0.5px;
+        }
+
+        .music-button:hover {
+            background: linear-gradient(135deg, #d783a5, #bd6e91);
+        }
+
+
+        /* ---------- Floating Birthday Hearts ---------- */
+
+        .birthday-reveal {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-heart {
+            position: absolute;
+            bottom: -40px;
+            left: var(--heart-left);
+            font-size: var(--heart-size);
+            opacity: 0;
+            animation: heartFloat var(--heart-duration) linear forwards;
+            animation-delay: var(--heart-delay);
+        }
+
+        @keyframes heartFloat {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.65;
+            }
+
+            80% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(-650px) rotate(35deg);
+                opacity: 0;
+            }
+        }
+
+
+        .birthday-countdown {
+            margin: 18px auto;
+            padding: 12px 20px;
+            max-width: 320px;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid #f0c6d8;
+            border-radius: 18px;
+            color: #a65f80;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 18px rgba(210, 140, 170, 0.12);
+        }
+
+
+        .roast-section {
+            margin: 30px auto 10px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .roast-button {
+            background: linear-gradient(135deg, #e9a7c1, #c77da0);
+            color: white;
+            border: 1px solid #f5c9dc;
+            border-radius: 30px;
+            padding: 14px 25px;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(199, 125, 160, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .roast-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(199, 125, 160, 0.3);
+        }
+
+        .roast-message {
+            margin-top: 22px;
+            padding: 24px;
+            background: linear-gradient(145deg, #fff8fb, #ffeaf2);
+            border: 1px solid #f1c2d6;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(199, 125, 160, 0.12);
+            color: #80536a;
+            line-height: 1.8;
+            animation: birthdayAppear 0.7s ease both;
+        }
+
+        .roast-message h2 {
+            color: #b65f86;
+            font-size: 19px;
+            line-height: 1.5;
+        }
+
+        .roast-signature {
+            color: #b65f86;
+            font-family: Georgia, serif;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+
+        #continueBtn {
+            max-width: 100%;
+            white-space: normal;
+            line-height: 1.6;
+            padding: 14px 22px;
+            border-radius: 18px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            #continueBtn {
+                width: 100%;
+                padding: 12px 14px;
+                font-size: 13px;
+            }
+        }
+
+
+
+        .delayed-shadi-button {
+            opacity: 0;
+            transform: translateY(24px) scale(0.94);
+            filter: blur(4px);
+
+            transition:
+                opacity 2s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 2s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 2s ease;
+
+            will-change: opacity, transform, filter;
+            animation: popIn 0.5s ease;
+        }
+
+        .delayed-shadi-button.show-shadi-button {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+        }
+
+
+        #continueBtn {
+            box-shadow: 0 8px 25px rgba(199, 125, 160, 0.15);
+            transition:
+                box-shadow 0.8s ease,
+                background 0.8s ease;
+        }
+
+        #continueBtn:hover {
+            box-shadow: 0 12px 32px rgba(199, 125, 160, 0.3);
+        }
+
+
+        /* Final birthday card polish */
+        .birthday-reveal {
+            border: 1px solid rgba(231, 173, 198, 0.8);
+            box-shadow:
+                0 20px 60px rgba(190, 125, 155, 0.14),
+                inset 0 0 30px rgba(255, 255, 255, 0.45);
+            transition: box-shadow 0.8s ease;
+        }
+
+        .birthday-reveal:hover {
+            box-shadow:
+                0 24px 70px rgba(190, 125, 155, 0.2),
+                inset 0 0 30px rgba(255, 255, 255, 0.55);
+        }
+
+        .birthday-reveal h1 {
+            text-shadow: 0 3px 18px rgba(190, 125, 155, 0.12);
+        }
+
+        .birthday-reveal .birthday-cake {
+            transition: transform 0.8s ease;
+        }
+
+        .birthday-reveal .birthday-cake:hover {
+            transform: translateY(-5px) scale(1.04);
+        }
+
+
+        /* Final mobile polish */
+        @media (max-width: 600px) {
+            .birthday-reveal {
+                width: calc(100% - 24px);
+                max-width: 100%;
+                margin: 12px auto;
+                padding: 24px 16px;
+                box-sizing: border-box;
+                border-radius: 22px;
+            }
+
+            .birthday-reveal h1 {
+                font-size: clamp(25px, 7vw, 36px);
+                line-height: 1.25;
+                overflow-wrap: anywhere;
+            }
+
+            .birthday-message {
+                padding: 16px;
+                font-size: 14px;
+                line-height: 1.8;
+                overflow-wrap: anywhere;
+            }
+
+            .birthday-countdown {
+                width: 100%;
+                max-width: 320px;
+                box-sizing: border-box;
+                font-size: 13px;
+                line-height: 1.8;
+            }
+
+            .music-button,
+            .roast-button {
+                max-width: 100%;
+                white-space: normal;
+                line-height: 1.6;
+            }
+
+            .birthday-hearts {
+                letter-spacing: 3px;
+            }
+        }
+
+
+        /* Elegant entrance for birthday content */
+        .birthday-reveal h1 {
+            animation: titleFloatIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .birthday-reveal .birthday-message {
+            animation: messageFloatIn 1.8s ease 0.2s both;
+        }
+
+        @keyframes titleFloatIn {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+                letter-spacing: 2px;
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                letter-spacing: normal;
+            }
+        }
+
+        @keyframes messageFloatIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main class="container">
+        <div class="envelope">💌</div>
+
+        <p class="small-text">A LITTLE MESSAGE FOR YOU</p>
+
+        <div class="birthday-countdown" id="birthdayCountdown">
+            🎀 Calculating birthday magic... ✨
+        </div>
+
+        <h1>Washa, I need to tell you something serious...</h1>
+
+        <p class="subtitle">
+            Please read this carefully. 👀
+        </p>
+
+        <button id="openMessage">Open Your Message 💗</button>
+
+        <div id="prankPopup" class="popup hidden">
+            <div class="popup-content">
+                <span class="ring">💍</span>
+
+                <h2>SHADI MUBARAK! 😂</h2>
+
+                <p>Washa ki shaadi ki tayari shuru karo! 🤣</p>
+
+
+                <button id="continueBtn" class="delayed-shadi-button hidden">
+                    Ooooh, sorry! I think it's not your shadi... 😭💗
+                </button>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Birthday Reveal -->
+
+    <section id="birthdayReveal" class="birthday-reveal hidden">
+
+
+        <div id="floatingHearts" class="floating-hearts"></div>
+
+
+        <div class="birthday-decor">🎀 ✨ 💗 ✨ 🎀</div>
+
+        <p class="small-text">TODAY IS ALL ABOUT YOU</p>
+
+        <div class="birthday-cake">🎂</div>
+
+        <h1>HAPPY BIRTHDAY, WASHA!</h1>
+
+        <p class="birthday-subtitle">
+            To my beautiful sister, Rabail 💕
+        </p>
+
+        <div class="birthday-message">
+            <p>
+                SURPRISEEEEE! 😭💗
+            </p>
+
+            <p>
+                Shadi nahi, birthday hai! 😂
+                Aaj tumhara special day hai,
+                so get ready for lots of love,
+                laughter, and cake! 🎂
+            </p>
+
+            <p>
+                You are more than just my sister.
+                You're a precious part of my life,
+                and I hope your new year brings you
+                endless happiness, beautiful memories,
+                and everything your heart wishes for.
+            </p>
+
+            <p>
+                Stay the same wonderful, crazy,
+                adorable Washa forever! 🥹🎀
+            </p>
+
+            <p class="birthday-signature">
+                Lots of love, always 💗
+            </p>
+        </div>
+
+        <div class="birthday-hearts">💗 💖 💕 💗 💖</div>
+
+
+        <div class="roast-section">
+            <p class="small-text">ONE LAST SURPRISE... 👀</p>
+
+            <button id="roastButton" class="roast-button">
+                🔥 Surprise Message 😂
+            </button>
+
+            <div id="roastMessage" class="roast-message hidden">
+                <h2>⚠️ SURPRISE ACTIVATED ⚠️</h2>
+
+                <p>
+                    Happy Birthday, Washa! 🎂😂
+                </p>
+
+                <p>
+                    You're proof that being older doesn't
+                    automatically mean being wiser. 🤭
+                </p>
+
+                <p>
+                    Your drama deserves its own Netflix series,
+                    your mood changes need a weather forecast,
+                    and somehow you're STILL everyone's favourite
+                    headache. 😭💗
+                </p>
+
+                <p>
+                    But honestly, life would be boring without
+                    your crazy self. Love you, you adorable
+                    little disaster! 🎀😂
+                </p>
+
+                <p class="roast-signature">
+                    Message complete! 💕
+                </p>
+            </div>
+        </div>
+
+
+
+        <button id="musicButton" class="music-button">
+            🎵 Play Birthday Music
+        </button>
+
+        <audio id="birthdayMusic" loop>
+            <source src="the_mountain-happy-birthday-508020.mp3" type="audio/mpeg">
+        </audio>
+
+
+    </section>
+
+
+    <script>
+
+        const openMessage = document.getElementById("openMessage");
+        const prankPopup = document.getElementById("prankPopup");
+        const continueBtn = document.getElementById("continueBtn");
+        const birthdayReveal = document.getElementById("birthdayReveal");
+        const container = document.querySelector(".container");
+
+        // Show the Shadi Mubarak prank
+        openMessage.addEventListener("click", function () {
+            prankPopup.classList.remove("hidden");
+        });
+
+        // Show the designed birthday page
+        continueBtn.addEventListener("click", function () {
+            prankPopup.classList.add("hidden");
+            container.classList.add("hidden");
+
+            birthdayReveal.classList.remove("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+
+        const musicButton = document.getElementById("musicButton");
+        const birthdayMusic = document.getElementById("birthdayMusic");
+
+        musicButton.addEventListener("click", async function () {
+            if (birthdayMusic.paused) {
+                try {
+                    await birthdayMusic.play();
+                    musicButton.textContent = "⏸ Pause Birthday Music";
+                } catch (error) {
+                    musicButton.textContent = "🎵 Tap to Try Music Again";
+                }
+            } else {
+                birthdayMusic.pause();
+                musicButton.textContent = "🎵 Play Birthday Music";
+            }
+        });
+
+
+        const floatingHearts = document.getElementById("floatingHearts");
+
+        function createBirthdayHeart() {
+            if (!floatingHearts) return;
+
+            const heart = document.createElement("span");
+            const symbols = ["💗", "💕", "♡", "🎀", "✨"];
+
+            heart.className = "floating-heart";
+            heart.textContent =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            heart.style.setProperty("--heart-left", Math.random() * 95 + "%");
+            heart.style.setProperty("--heart-size", 14 + Math.random() * 16 + "px");
+            heart.style.setProperty("--heart-duration", 5 + Math.random() * 4 + "s");
+            heart.style.setProperty("--heart-delay", Math.random() * 1.5 + "s");
+
+            floatingHearts.appendChild(heart);
+
+            heart.addEventListener("animationend", function () {
+                heart.remove();
+            });
+        }
+
+        let heartTimer;
+
+        continueBtn.addEventListener("click", function () {
+            if (heartTimer) return;
+
+            heartTimer = setInterval(createBirthdayHeart, 450);
+        });
+
+
+        const birthdayCountdown = document.getElementById("birthdayCountdown");
+
+        function updateBirthdayCountdown() {
+            if (!birthdayCountdown) return;
+
+            const now = new Date();
+            let birthday = new Date(now.getFullYear(), 9, 30);
+
+            if (now >= birthday) {
+                birthday = new Date(now.getFullYear() + 1, 9, 30);
+            }
+
+            const difference = birthday - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+                (difference / (1000 * 60 * 60)) % 24
+            );
+            const minutes = Math.floor(
+                (difference / (1000 * 60)) % 60
+            );
+            const seconds = Math.floor((difference / 1000) % 60);
+
+            birthdayCountdown.textContent =
+                `🎀 ${days}d ${hours}h ${minutes}m ${seconds}s until October 30 ✨`;
+        }
+
+        updateBirthdayCountdown();
+        setInterval(updateBirthdayCountdown, 1000);
+
+
+        const roastButton = document.getElementById("roastButton");
+        const roastMessage = document.getElementById("roastMessage");
+
+        if (roastButton && roastMessage) {
+            roastButton.addEventListener("click", function () {
+                roastMessage.classList.remove("hidden");
+                roastButton.textContent = "😂 Surprise Unlocked!";
+                roastButton.disabled = true;
+            });
+        }
+
+
+        const delayedShadiButton = document.querySelector(".delayed-shadi-button");
+        let shadiRevealTimer;
+
+        openMessage.addEventListener("click", function () {
+            if (!delayedShadiButton) return;
+
+            delayedShadiButton.classList.add("hidden");
+            delayedShadiButton.classList.remove("show-shadi-button");
+
+            clearTimeout(shadiRevealTimer);
+
+            shadiRevealTimer = setTimeout(function () {
+                delayedShadiButton.classList.remove("hidden");
+                delayedShadiButton.classList.add("show-shadi-button");
+            }, 3000);
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
